@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemilu 2023</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Periksa apakah pengguna sudah login
+        if (!localStorage.getItem('isLoggedIn')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Pemilu 2023</h1>
+        <button id="logoutButton">Logout</button>
+    </header>
+    <div class="container">
+        <main>
+            <section id="voteAndBiography">
+                <h2 id="biography">Biografi dari Kandidat</h2>
+                <div class="candidates-container">
+                    <div class="candidate" onclick="showDetails('candidate1')">
+                        <img src="calon1.jpg" alt="Calon 1">
+                        <h3>Calon 1</h3>
+                        <div id="candidate1" class="details" style="display:none;">
+                            <p><strong>Visi:</strong> Meningkatkan kesejahteraan masyarakat.</p>
+                            <p><strong>Misi:</strong> Membangun infrastruktur yang lebih baik.</p>
+                        </div>
+                    </div>
+                    <div class="candidate" onclick="showDetails('candidate2')">
+                        <img src="calon2.jpg" alt="Calon 2">
+                        <h3>Calon 2</h3>
+                        <div id="candidate2" class="details" style="display:none;">
+                            <p><strong>Visi:</strong> Mewujudkan pendidikan yang berkualitas.</p>
+                            <p><strong>Misi:</strong> Meningkatkan akses pendidikan untuk semua.</p>
+                        </div>
+                    </div>
+                    <div class="candidate" onclick="showDetails('candidate3')">
+                        <img src="calon3.jpg" alt="Calon 3">
+                        <h3>Calon 3</h3>
+                        <div id="candidate3" class="details" style="display:none;">
+                            <p><strong>Visi:</strong> Meningkatkan kesehatan masyarakat.</p>
+                            <p><strong>Misi:</strong> Membangun fasilitas kesehatan yang lebih baik.</p>
+                        </div>
+                    </div>
+                </div>
+                <h2 id="vote">Berikan Suara Anda</h2>
+                <form id="voteForm">
+                    <label for="candidate">Pilih Kandidat:</label>
+                    <select id="candidate" name="candidate">
+                        <option value="1">Calon 1</option>
+                        <option value="2">Calon 2</option>
+                        <option value="3">Calon 3</option>
+                    </select>
+                    <button type="submit">Vote</button>
+                </form>
+                <h2 id="results">Hasil Pemilu</h2>
+                <canvas id="resultsChart"></canvas>
+                <ul id="resultsList">
+                    <!-- Hasil akan ditampilkan di sini -->
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="voters.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

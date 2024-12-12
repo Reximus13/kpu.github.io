@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pemilu 2023</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="voters.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Login - Pemilu 2023</h1>
+    </header>
+    <main>
+        <section id="login">
+            <h2>Login</h2>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+        <section id="results">
+            <h2>Hasil Pemilu</h2>
+            <canvas id="resultsChart"></canvas>
+        </section>
+    </main>
+    <script src="users.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
